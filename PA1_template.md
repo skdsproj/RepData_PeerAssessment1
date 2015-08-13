@@ -245,7 +245,11 @@ The mean and median of the total steps with the filled dataset do not differ con
 
 ```r
 data3 <- data2[,1:4]
-data3$day <- as.factor(ifelse (weekdays(data3$date, abbreviate=TRUE) %in% c("Sat", "Sun"), "weekend", "weekday"))
+data3$day <- as.factor(ifelse 
+                       (weekdays(data3$date, abbreviate=TRUE) %in% c("Sat", "Sun"),
+                        "weekend", 
+                        "weekday")
+                       )
 ```
 
 ### Panel plot showing weekday & weekend activity separately

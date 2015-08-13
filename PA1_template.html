@@ -210,7 +210,11 @@ totalmedianfilled &lt;- format(median(totalstepsfilled$steps), scientific=FALSE,
 <div id="weekday-weekend-indicator" class="section level3">
 <h3>Weekday &amp; weekend indicator</h3>
 <pre class="r"><code>data3 &lt;- data2[,1:4]
-data3$day &lt;- as.factor(ifelse (weekdays(data3$date, abbreviate=TRUE) %in% c(&quot;Sat&quot;, &quot;Sun&quot;), &quot;weekend&quot;, &quot;weekday&quot;))</code></pre>
+data3$day &lt;- as.factor(ifelse 
+                       (weekdays(data3$date, abbreviate=TRUE) %in% c(&quot;Sat&quot;, &quot;Sun&quot;),
+                        &quot;weekend&quot;, 
+                        &quot;weekday&quot;)
+                       )</code></pre>
 </div>
 <div id="panel-plot-showing-weekday-weekend-activity-separately" class="section level3">
 <h3>Panel plot showing weekday &amp; weekend activity separately</h3>
