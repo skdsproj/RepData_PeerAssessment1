@@ -112,7 +112,13 @@ Time-series plot 1.
 
 
 ```r
-ggplot(data=avgsteps, aes(x=time, y=steps)) + geom_line() + scale_x_datetime(breaks = date_breaks("2 hour"),labels = date_format("%H:%M", tz="America/Los_Angeles")) + labs(x = "Time of day", y = "Average number of steps") + ggtitle("Time Series Plot 1")
+ggplot(data=avgsteps, aes(x=time, y=steps)) + 
+        geom_line() + 
+        scale_x_datetime(
+                breaks = date_breaks("2 hour"),
+                labels = date_format("%H:%M", tz="America/Los_Angeles")) +
+        labs(x = "Time of day", y = "Average number of steps") + 
+        ggtitle("Time Series Plot 1")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
@@ -255,7 +261,14 @@ Time-series plot 2.
 
 
 ```r
-ggplot(data=avgstepsbytype, aes(x=time, y=steps)) + geom_line() + facet_grid(day ~ .) + scale_x_datetime(breaks = date_breaks("2 hour"),labels = date_format("%H:%M", tz="America/Los_Angeles")) + labs(x = "Time of day", y = "Average number of steps") + ggtitle("Time Series Plot 2")
+ggplot(data=avgstepsbytype, aes(x=time, y=steps)) + 
+        geom_line() + 
+        facet_grid(day ~ .) + 
+        scale_x_datetime(
+                breaks = date_breaks("2 hour"),
+                labels = date_format("%H:%M", tz="America/Los_Angeles")) + 
+        labs(x = "Time of day", y = "Average number of steps") + 
+        ggtitle("Time Series Plot 2")
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-23-1.png) 

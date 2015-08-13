@@ -104,7 +104,13 @@ Time-series plot 1.
 *Note: Had to include the timezone while formatting since the default was UTC and the graph showed times from 7 am to 7 am next day since the data stored in the time column was my current date in the PDT timezone appended to the time interval.*
 
 ```{r echo=TRUE}
-ggplot(data=avgsteps, aes(x=time, y=steps)) + geom_line() + scale_x_datetime(breaks = date_breaks("2 hour"),labels = date_format("%H:%M", tz="America/Los_Angeles")) + labs(x = "Time of day", y = "Average number of steps") + ggtitle("Time Series Plot 1")
+ggplot(data=avgsteps, aes(x=time, y=steps)) + 
+        geom_line() + 
+        scale_x_datetime(
+                breaks = date_breaks("2 hour"),
+                labels = date_format("%H:%M", tz="America/Los_Angeles")) +
+        labs(x = "Time of day", y = "Average number of steps") + 
+        ggtitle("Time Series Plot 1")
 ```
 
 ### Maximum number of steps  
@@ -203,7 +209,14 @@ avgstepsbytype <- aggregate(steps ~ day+time, data = data3, mean)
 Time-series plot 2.
 
 ```{r echo=TRUE}
-ggplot(data=avgstepsbytype, aes(x=time, y=steps)) + geom_line() + facet_grid(day ~ .) + scale_x_datetime(breaks = date_breaks("2 hour"),labels = date_format("%H:%M", tz="America/Los_Angeles")) + labs(x = "Time of day", y = "Average number of steps") + ggtitle("Time Series Plot 2")
+ggplot(data=avgstepsbytype, aes(x=time, y=steps)) + 
+        geom_line() + 
+        facet_grid(day ~ .) + 
+        scale_x_datetime(
+                breaks = date_breaks("2 hour"),
+                labels = date_format("%H:%M", tz="America/Los_Angeles")) + 
+        labs(x = "Time of day", y = "Average number of steps") + 
+        ggtitle("Time Series Plot 2")
 ```
 
 ## End of Document
